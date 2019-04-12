@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="panel">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="panel-title">Visualizar Categoria</h1>
+
+                    <div class="panel-heading">
+                        <h3>{{ category.id }} - Nome: {{ category.name }}</h3>
+                        <a href="{{ route('category-costs.delete', {'id' : category.id}) }}" class="bt bt-danger hvr-underline-from-left"><i class="fas fa-eraser"></i> DELETAR</a>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

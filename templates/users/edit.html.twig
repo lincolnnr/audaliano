@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="panel">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="panel-title">Editar Usuário</h1>
+                {% set action = route('users.update', {'id': user.id})  %}
+                {% include 'users/_form.html.twig' %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

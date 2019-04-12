@@ -1,0 +1,46 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="left">Usuário</h1>
+                            <a href="{{ route('users.new') }}" class="bt bt-light hvr-underline-from-left right"><i class="fas fa-plus"></i> Novo usuário</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>E-mail</th>
+                                    <th>Nome</th>
+                                    <th>Empresa</th>
+                                    <th>Ações</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <td>{{ user.id }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.first_name ~ ' ' ~ user.last_name}}</td>
+                                    <td>{{ user.empresa }}</td>
+                                    <td><a href="{{ route('users.edit', {'id' : user.id}) }}"><i class="fas fa-pencil-alt"></i></a> |
+                                        <a href="{{ route('users.show', {'id' : user.id}) }}"><i class="fas fa-eraser"></i></a>
+                                        </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+<form action="{{ action }}" method="post">
+    <div class="form-group">
+        <label for="" class="control-label">Nome</label>
+        <input type="text" class="form-control" placeholder="Nome" name="first_name" value="{{ user.first_name }}">
+
+        <label for="" class="control-label">Sobrenome</label>
+        <input type="text" class="form-control" placeholder="Sobrenome" name="last_name" value="{{ user.last_name }}">
+
+        <label for="" class="control-label">E-mail</label>
+        <input type="text" class="form-control" placeholder="E-mail" name="email" value="{{ user.email }}">
+
+        <label for="" class="control-label">Password</label>
+        <input type="password" class="form-control" placeholder="Password" name="password" value="{{ user.password }}">
+
+        <label for="" class="control-label">Empresa</label>
+        <input type="text" class="form-control" placeholder="Empresa" name="empresa" value="{{ user.empresa }}">
+    </div>
+    <button type="submit" class="bt bt-primary hvr-underline-from-left">
+        <i class="fas fa-save"></i> Salvar</button></div>
+</form>

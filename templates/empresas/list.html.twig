@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="left">Empresa</h1>
+                            <a href="{{ route('empresas.new') }}" class="bt bt-light hvr-underline-from-left right"><i class="fas fa-plus"></i> Nova Empresa</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>CNPJ</th>
+                                    <th style="width:50%;">Empresa</th>
+                                    <th>Ações</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for empresa in empresas %}
+                                <tr>
+                                    <td>{{ empresa.id }}</td>
+                                    <td>{{ empresa.cnpj }}</td>
+                                    <td>{{ empresa.razaosocial }}</td>
+                                    <td>
+                                        <a href="{{ route('empresas.show', {'id' : empresa.id}) }}" alt="Cadastro de Contrato"><i class="fas fa-user-plus"></i> Usuário</a> |
+                                        <a href="{{ route('empresas.show', {'id' : empresa.id}) }}" alt="Cadastro de Contrato"><i class="fas fa-copy"></i> Contrato</a> |
+                                        <a href="{{ route('empresas.edit', {'id' : empresa.id}) }}" alt="Editar cadastro empresa"><i class="fas fa-pencil-alt"></i> Editar</a> |
+{#                                        <a href="{{ route('empresas.show', {'id' : empresa.id}) }}" alt="Deletar empresa"><i class="fas fa-eraser"></i> Deletar</a>#}
+
+                                        </td>
+
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

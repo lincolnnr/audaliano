@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Audaliano - SON Finanças</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://lincolnnogueira.com/dashboard.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="http://lincolnnogueira.com/cep.js"></script>
+</head>
+<body>
+<header class="navbar navbar-expand navbar-dark fixed-top flex-column flex-md-row bd-navbar">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+            <img src="http://gerenciador.audalianosantos.com.br/imagens/logo.jpg" alt="Logo Audaliano" height="45px">
+        </a>
+
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/sair">Sair <i class="fas fa-sign-out-alt"></i></a>
+            </li>
+        </ul>
+</header>
+<br><br>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item nav-vert">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-chart-pie"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item nav-vert">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-hand-holding-usd"></i> Contas a pagar
+                            </a>
+                        </li>
+                        <li class="nav-item nav-vert">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-file-invoice-dollar"></i> Contas a receber
+                            </a>
+                        </li>
+                        <li class="nav-item nav-vert">
+                            <a class="nav-link active" href="/empresas">
+                                <i class="fas fa-file-invoice"></i> Empresas
+                            </a>
+                        </li>
+                        <li class="nav-item nav-vert">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-chart-line"></i> Relatórios
+                            </a>
+                        </li>
+                        <li class="nav-item nav-vert">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-tools"></i> Configurações
+                            </a>
+                        </li>
+                        <li class="nav-item nav-vert">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-sign-out-alt"></i> Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>
